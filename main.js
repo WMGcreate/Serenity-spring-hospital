@@ -175,21 +175,16 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
   
-    function playVideo() {
-        const container = document.querySelector('.video-container');
-        const video = container.querySelector('video');
-        const playButton = container.querySelector('.play-button');
-        const image = container.querySelector('img');
+  const playButton = document.getElementById('play-btn');
+  const videoPlayer = document.getElementById('video-player');
+  const videoThumbnail = document.getElementById('video-thumbnail');
 
-        // Hide the play button and image, show the video
-        playButton.style.display = 'none';
-        image.style.display = 'none';
-        video.style.display = 'block';
-
-        // Start playing the video
-        video.play();
-    }
-
+  playButton.addEventListener('click', function () {
+    videoThumbnail.style.display = 'none'; // Hide the image
+    playButton.style.display = 'none'; // Hide the play button
+    videoPlayer.style.display = 'block'; // Show the video player
+    videoPlayer.play(); // Start playing the video
+  });
 
 })();
 
