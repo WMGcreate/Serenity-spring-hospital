@@ -72,6 +72,68 @@ h6 {
   font-family: var(--heading-font);
 }
 
+/* Example: Restrict the width of containers */
+.container {
+  max-width: 1200px; /* Adjust this value to your preferred width */
+  margin: 0 auto; /* Center the container */
+  padding: 0 20px; /* Add padding for spacing */
+}
+.box {
+  width: 50%; /* Takes 50% of the available space */
+}
+.element {
+  width: 80vw; /* 80% of the viewport width */
+}
+body {
+  font-size: 16px; /* Base font size */
+}
+
+h1 {
+  font-size: 2rem; /* 32px, 2 times the base size */
+}
+
+p {
+  font-size: 1rem; /* 16px, same as base size */
+}
+/* For large screens */
+.container {
+  max-width: 1200px;
+}
+
+/* Adjust layout for screens smaller than 768px */
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%; /* Images will scale to fit within their container */
+  height: auto;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Wrap elements on smaller screens */
+  justify-content: space-between;
+}
+
+.box {
+  flex: 1 1 300px; /* Flex-grow, shrink, and base width */
+  margin: 10px;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
 
 /*--------------------------------------------------------------
 # Header
